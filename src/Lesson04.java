@@ -41,7 +41,7 @@ public class Lesson04 {
 
         System.out.println("Dumb way: " + tenWords[0] + " " + tenWords[1] + " " + tenWords[2] + " " + tenWords[3] + " " + tenWords[4] + " " + tenWords[5] + " " + tenWords[6] + " " + tenWords[7] + " " +tenWords[8] + " " + tenWords[9]);
 
-        StringJoiner tenwords = new StringJoiner(" ");
+        StringJoiner tenwords = new StringJoiner(" "); // we use Camel case in Java
         for (int i = 0; i < 10; i++) {
             tenwords.add(tenWords[i]);
         }
@@ -49,6 +49,11 @@ public class Lesson04 {
         String fin = tenwords.toString();
         System.out.print("'Stringjoiner' way: " + fin);
         System.out.println();
+
+        // Also can be done another way
+        String myString = String.join(" ", tenWords);
+        System.out.println(myString);
+
         in.reset();
 
         //** Task 3 **//
@@ -61,7 +66,7 @@ public class Lesson04 {
 
         String s1 = Integer.toString(num1);
         String s2 = Integer.toString(num2);
-        String uni = String.join(del, s1, s2);
+        String uni = String.join(del, s1, s2); // SUPER!!!
 
         System.out.print("Result: " + uni);
 
