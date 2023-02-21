@@ -17,10 +17,10 @@ public class KontroshaHuyesha {
 
         String [] numsAndWords = new String[n];
 
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter " + (i + 1) + " statement: ");
-            if (i == 0){
-                fuckingScannerError = in.nextLine();
+            if (i == 0) {
+                fuckingScannerError = in.nextLine(); // what's the purpose of this line?
             }
             numsAndWords[i] = in.nextLine();
         }
@@ -28,11 +28,11 @@ public class KontroshaHuyesha {
 
         int count = 0;
         System.out.println("Numbers: ");
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             char [] statement = numsAndWords[i].toCharArray();
             for (int j = 0; j < statement.length; j++){
-                for (int k = 0; k < 10; k++){
-                    if ((int)statement[j] == decimal[k]) count++;
+                for (int k = 0; k < 10; k++) {
+                    if ((int) statement[j] == decimal[k]) count++; // pretty nice!
                 }
             }
             if (count == statement.length) {
@@ -51,7 +51,7 @@ public class KontroshaHuyesha {
         n = in.nextInt();
 
         String [] wordlist = new String[n];
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter " + (i + 1) + " word: ");
             if (i == 0) {
                 fuckingScannerError = in.nextLine();
@@ -60,9 +60,11 @@ public class KontroshaHuyesha {
         }
         System.out.println();
 
-        int max = 0, min = 1000;
+        //** int max = 0, min = 1000; /--you can't use hard code when you have--/ to **//
+        int max = wordlist[0].length();
+        int min = wordlist[0].length(); // plus, we do not unite two declaration of variable in the same line,
 
-        for (int i = 0; i < n; i++){
+        for (int i = 1; i < n; i++){
             if (wordlist[i].length() > max) max = wordlist[i].length();
             if (wordlist[i].length() < min) min = wordlist[i].length();
         }
@@ -80,7 +82,7 @@ public class KontroshaHuyesha {
 
         int [] num = new int [n];
 
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter " + (i + 1) + " number: ");
             if (i == 0){
                 fuckingScannerError = in.nextLine();
@@ -90,12 +92,15 @@ public class KontroshaHuyesha {
         System.out.println();
 
         int sum = 0;
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             sum += num[i];
         }
 
-        boolean isOdd = false;
-        if (sum % 2 == 0) isOdd = true;
+        /*-- boolean isOdd = false;
+        if (sum % 2 == 0) isOdd = true; --*/
+
+        // can be done another way:
+        boolean isOdd = sum % 2 == 0;
         System.out.println("Is the sum odd? " + isOdd + "!");
         System.out.println();
 
@@ -108,15 +113,18 @@ public class KontroshaHuyesha {
         fuckingScannerError = in.nextLine();
         String startNums = in.nextLine();
 
-        String [] splitedNums = startNums.split(" ");
+        String [] splitedNums = startNums.split(" "); // very well!
         int [] convertedNums = new int [splitedNums.length];
 
         for (int i = 0; i < splitedNums.length; i++){
-            convertedNums[i] = Integer.parseInt(splitedNums[i]);
+            convertedNums[i] = Integer.parseInt(splitedNums[i]); // nice!:)
         }
 
-        int max1 = -2147483648, min1 = 2147483647;
-        for (int i = 0; i < splitedNums.length; i++){
+        /*-- int max1 = -2147483648, min1 = 2147483647; --*/
+        int max1 = convertedNums[0];
+        int min1 = convertedNums[0];
+
+        for (int i = 1; i < splitedNums.length; i++){
             if (convertedNums[i] > max1) max1 = convertedNums[i];
             if (convertedNums[i] < min1) min1 = convertedNums[i];
         }
@@ -137,7 +145,7 @@ public class KontroshaHuyesha {
         for (int i = 0; i < n; i++) {
             System.out.print("Enter " + (i + 1) + " number: ");
             arr[i] = in.nextInt();
-            if (i > 0 && arr[i] > arr[i-1]) buf++;
+            if (i > 0 && arr[i] > arr[i-1]) buf++; // nice!:)
         }
 
         boolean increasingOrder = false;
@@ -192,7 +200,7 @@ public class KontroshaHuyesha {
         n = in.nextInt();
 
         sum = 0;
-        if (n > 0){
+        if (n > 0) {
             for (int i = n; i != 0; i--){
                 sum += i;
             }
@@ -243,7 +251,7 @@ public class KontroshaHuyesha {
         System.out.println("A: " + a + "\nB: " + b);
         System.out.println();
 
-        //или я не понял прикола, или задание ни про что...
+        //или я не понял прикола, или задание ни про что... well, it is..
 
         //** Task 11 **//
         //Напишите Java-программу, чтобы определить, является ли строка или число палиндромом, или нет
@@ -330,11 +338,11 @@ public class KontroshaHuyesha {
             System.out.print(arr1[i] + " ");
         }
         System.out.println();
-        int preMax = 0;
-        max = 0;
+        int preMax = arr1[1];
+        max = arr1[0];
         count = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i < n; i++) {
             if (arr1[i] > max) max = arr1[i];
         }
 
@@ -364,8 +372,8 @@ public class KontroshaHuyesha {
         }
         System.out.println();
 
-        max = 0;
-        min = 2147483647;
+        max = arr2[0];
+        min = arr2[0];
         int indmin = 0;
         int indmax = 0;
         sum = 0;
@@ -382,6 +390,8 @@ public class KontroshaHuyesha {
             }
         }
 
+        /* I really don't understand what happens in this part of the code.
+
         for (int i = 0; i < n; i++) {
             if (arr2[i] > 0) sum += arr2[i];
         }
@@ -393,6 +403,15 @@ public class KontroshaHuyesha {
         } else {
             for (int i = (indmin + 1); i < indmax; i++) {
                 mult *= arr2[i];
+            }
+        }*/
+
+        for (int x = 0; x < arr2.length; x++) {
+            if (!(x == indmin || x == indmax)) {
+                mult *= arr2[x];
+            }
+            if (arr2[x] > 0) {
+                sum += arr[x];
             }
         }
 
@@ -410,8 +429,8 @@ public class KontroshaHuyesha {
         System.out.print("C: ");
         int c = in.nextInt();
 
-        System.out.print("Square: " + ((a * b) + (b * c) + (a * c)) + ";\n");
-        System.out.println("Volume: " + (a * b * c) + ".\n");
+        System.out.print("Square: " + ((a * b) + (b * c) + (a * c)) + ";\n"); // very well!
+        System.out.println("Volume: " + (a * b * c) + ".\n"); // nice:)
 
         //** Task 17 **//
         //Пользователь вводит два целых числа - час, когда он лег спать, и час,
@@ -452,6 +471,8 @@ public class KontroshaHuyesha {
         System.out.println("Time to alarm: " + days + " days, " + hours_left + " hours, " + minutes_left + " minutes.");
         System.out.println();
 
+        // Wow!
+
         //** Task 18 **//
         //Пользователь вводит два числа: – количество строк, которое печатается на странице книги, и – номер строки.
         //Выведете на экран два числа – номер страницы, на которой будет напечатана эта строка и номер строки на странице.
@@ -465,6 +486,8 @@ public class KontroshaHuyesha {
 
         if (goal / str <= pages && goal > 0 && pages > 0 && str > 0) System.out.println("Your page is: " + ((goal / str) + 1) + ". The number of string on the page: " + (goal % str));
         else System.out.println("This string doesn't exist.");
+
+        // AWESOME!
 
     }
 
