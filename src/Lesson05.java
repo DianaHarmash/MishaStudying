@@ -220,19 +220,25 @@ public class Lesson05 {
 
     //** Task 1 **//
 
-    public static void task1 (){
+    public static void task1 () {
         int m = 1;
         int n = 0;
 
         while (m != 0) {
             System.out.print("Enter the number of subsequence (1-4, or 0 to exit): ");
             m = getValue();
-            if (m != 0 && m > 0 && m <= 4) {
+            if (m != 0 && m > 0 && m <= 4) { // m > 0 means m != 0 by default
+                // so it can be simplified:
+                // if (m > 0 && m <= 4)
                 System.out.print("Enter the number of elements you need: ");
                 n = getValue();
             }
 
-            int [] num = new int[n];
+//            int [] num = new int[n];
+//            you define num[] in ***Subsequence methods, so there is no need to define it here
+//            just declaration will be enough
+
+            int num[];
 
             switch (m) {
                 case 1:
@@ -306,9 +312,16 @@ public class Lesson05 {
     }
 
     public static void main(String[] args) {
-        task1();
-        task2();
-        task3();
-        task4();
+        task1(); // nice, I am glad to see several usages of getValue() without creating new methods with the same purpose
+        task2(); // well done!
+        task3(); // nice to see you've defined to functions show1() and show2() to use them for one-dimension and two-dimension arrays
+        task4(); // pretty nice:)
+
+        // what I want to see is:
+        // printNumberOfTheTask(number of task); before calling task1(), task2(), etc.
+    }
+
+    private static void printNumberOfTheTask(int number) {
+        System.out.println("The " + number + " task.");
     }
 }
