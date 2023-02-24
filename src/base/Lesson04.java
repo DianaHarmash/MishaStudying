@@ -1,3 +1,5 @@
+package base;
+
 import java.util.Scanner;
 import java.util.StringJoiner;
 

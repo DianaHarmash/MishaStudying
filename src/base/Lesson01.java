@@ -1,3 +1,5 @@
+package base;
+
 public class Lesson01 {
     final static int a = 5;
     //static int a1 = b; - ясен хуй, что это невозможно!
